@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Gallerie;
 use Illuminate\Http\Request;
+use App\Gallerie;
 
 class GallerieController extends Controller
 {
@@ -14,7 +15,7 @@ class GallerieController extends Controller
      */
     public function index()
     {
-        //
+        return Gallerie:: all();
     }
 
     /**
@@ -35,7 +36,7 @@ class GallerieController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return Gallerie:: create($request->all());
     }
 
     /**
@@ -44,9 +45,9 @@ class GallerieController extends Controller
      * @param  \App\Gallerie  $gallerie
      * @return \Illuminate\Http\Response
      */
-    public function show(Gallerie $gallerie)
+    public function show($id)
     {
-        //
+        return Gallerie:: findOrFail($id);
     }
 
     /**

@@ -23,6 +23,7 @@ class CreateGalleriesTable extends Migration
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
             $table->foreign('image_id')->references('id')->on('images')->onDelete('cascade');
         });
     }
@@ -38,7 +39,7 @@ class CreateGalleriesTable extends Migration
             $table->dropForeign('galleries_user_id_foreign');
             $table->dropForeign('galleries_image_id_foreign');
         });
-        Schema::dropIfExists('galleries');
 
+        Schema::dropIfExists('galleries');
     }
 }
