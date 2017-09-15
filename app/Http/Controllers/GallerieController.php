@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Gallerie;
+use App\Image;
 use Illuminate\Http\Request;
 
 class GallerieController extends Controller
@@ -14,7 +15,10 @@ class GallerieController extends Controller
      */
     public function index()
     {
+
         return Gallerie:: all();
+
+
     }
 
     /**

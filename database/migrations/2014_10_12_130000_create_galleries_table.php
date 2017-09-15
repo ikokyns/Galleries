@@ -18,13 +18,13 @@ class CreateGalleriesTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->unsignedInteger('user_id');
-            $table->unsignedInteger('image_id');
+            
             
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
-            $table->foreign('image_id')->references('id')->on('images')->onDelete('cascade');
+            
         });
     }
 
@@ -37,7 +37,6 @@ class CreateGalleriesTable extends Migration
     {
         Schema::table('galleries', function (Blueprint $table) {
             $table->dropForeign('galleries_user_id_foreign');
-            $table->dropForeign('galleries_image_id_foreign');
         });
 
         Schema::dropIfExists('galleries');
